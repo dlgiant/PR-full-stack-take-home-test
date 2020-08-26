@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Router, Route } from "react-router-dom";
 
-export const Login = () => (
+export const Login = (props) => (
   <div>
     <Link to="/" style={{ float: "right" }}>
       Home
@@ -16,5 +16,6 @@ export const Login = () => (
       <br />
       <button type="submit">Submit</button>
     </form>
+    <Link to="/forgot">Forgot Password</Link>
   </div>
 );
