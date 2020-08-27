@@ -1,5 +1,7 @@
 module.exports = {
+  mode: "development",
   entry: "./client/index.jsx",
+  devtool: "eval-source-map",
   output: {
     filename: "./client/bundle.js",
   },
