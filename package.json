@@ -23,7 +23,7 @@
       "src/**/*.{js,jsx}"
     ],
     "setupFiles": [
-      "./config/jes/browserMocks.js"
+      "./config/jest/emailMocks.js"
     ],
     "moduleNameMapper": {
       "^.+\\.(scss)$": "identity-obj-proxy"
@@ -42,17 +42,23 @@
     "envalid": "^6.0.2",
     "express": "^4.17.1",
     "graphql": "^15.3.0",
+    "isomorphic-fetch": "^2.2.1",
     "knex": "^0.21.4",
     "md5": "^2.3.0",
+    "moment": "^2.27.0",
     "nodemailer": "^6.4.11",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "pg": "^8.3.3",
     "react": "^16.13.1",
     "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
     "react-notify-toast": "^0.5.1",
+    "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
+    "serialize-javascript": "^4.0.0",
     "sqlite3": "^5.0.0",
+    "util": "^0.12.3",
     "uuid": "^8.3.0"
   },
   "devDependencies": {
