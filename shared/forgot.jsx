@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { notify } from "react-notify-toast";
-import { API_URL } from "../config";
+import { API_URL } from "./config";
 import { v4 as uuidv4 } from "uuid";
 
 export default class Forgot extends Component {
@@ -12,7 +12,8 @@ export default class Forgot extends Component {
     event.preventDefault();
     this.setState({ sendingEmail: true })
 
-    fetch(`${API_URL}/email`, {
+    // Sending email in body to server
+    fetch(`${API_URL}/forgotpassword/`, {
       method: 'post',
       headers: {
         accept: 'applications/json',
@@ -25,6 +26,7 @@ export default class Forgot extends Component {
     })
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         this.setState({ sendingEmail: false });
         notify.show(data.msg);
         this.form.reset();

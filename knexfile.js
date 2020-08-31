@@ -1,9 +1,18 @@
 module.exports = {
   development: {
-    client: "sqlite3",
+    client: "pg",
     connection: {
-      filename: "./dev.sqlite3",
+      database: "pr_dev",
+      user: "pr_dev_user",
+      password: "123456"
     },
+    migrations: {
+      directory: './db/migrations',
+    },
+    seeds: {
+      directory: './db/seeds/dev'
+    },
+    useNullAsDefault: true
   },
 
   production: {
@@ -12,4 +21,12 @@ module.exports = {
       filename: "./prod.sqlite3",
     },
   },
+
+  onUpdateTrigger: table => `
+    CREATE TRIGGER ${table}_updated_at
+    BEFORE UPDATE ON ${table}
+    FOR EACH ROW
+    EXECUTE PROCEDURE on_update_timestamp();
+  `,
+
 };

@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import App from "./app";
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "../shared/App";
 
 const wrapper = document.getElementById("root");
-ReactDOM.render(<App />, wrapper);
+ReactDOM.hydrate(
+  <Router>
+    <App />
+  </Router>, 
+  wrapper);

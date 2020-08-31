@@ -21,6 +21,11 @@ exports.seed = function (knex) {
           email: "me@politicsrewired.com",
           auth0_id: "local|" + hash,
         },
+        {
+          name: "Rick",
+          email: "sanunes.ricardo@gmail.com",
+          auth0_id: "local|" + hash,
+        }
       ]);
     });
 };
